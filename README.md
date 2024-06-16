@@ -49,3 +49,19 @@ sudo python3 cuda_installer.pyz verify_cuda`
 ## 5. Install Anaconda
 
 Anaconda is a versatile tool for managing your development environments. For quick installation instructions, see this [Anaconda Installation Guide](https://developers.google.com/earth-engine/guides/python_install-conda).
+
+To make conda be initialized in default terminal. Add code below in your bash script:
+`# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ppwang/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ppwang/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ppwang/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ppwang/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<`
